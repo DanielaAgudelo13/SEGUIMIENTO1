@@ -3,11 +3,11 @@ import processing.core.PApplet;
 
 public class Main extends PApplet{
 
-	public static void main(String[] args) {
+		public static void main(String[] args) {
 		PApplet.main("Main");
 	}
 
-	public void settings() {
+		public void settings() {
 		size(500,500);
 	}	
 	
@@ -19,17 +19,15 @@ public class Main extends PApplet{
 	
 			listaCuadrados = new ArrayList<>();
 			
-		//Esta parte es para que se pueda agregar el mouse y elegirlo desde el centro
-			
 			rectMode(CENTER);
 			
 			frameRate(60);
 		}
 		
 		public void draw() {
-			background (0);
 			
-			añadirCuadrados();
+			background (0);
+			agregarCuadrados();
 			dibujarCuadrados();
 		}
 		
@@ -39,11 +37,11 @@ public class Main extends PApplet{
 			}
 		}
 		
-		private void añadirCuadrados() {
+		private void agregarCuadrados() {
 			if (frameCount == 60) {
-				int tamaño = (int) random(30, 60);
+				int tamano = (int) random(30, 60);
 				int posicionX = (int) random(50, 450);
-				listaCuadrados.add(new Cuadrado(posicionX, -50, tamaño, this));
+				listaCuadrados.add(new Cuadrado(posicionX, -50, tamano, this));
 				frameCount = 0;
 			}
 		}
@@ -54,14 +52,12 @@ public class Main extends PApplet{
 		
 		private void clicCuadrados() {
 			for (int i = 0; i < listaCuadrados.size(); i++) {
-				if (mouseX > (listaCuadrados.get(i).getPosicionX() - (listaCuadrados.get(i).getTamaño() / 2)) && 
-					mouseX < (listaCuadrados.get(i).getPosicionX() + (listaCuadrados.get(i).getTamaño() / 2)) && 
-					mouseY > (listaCuadrados.get(i).getPosicionY() - (listaCuadrados.get(i).getTamaño() / 2)) && 
-					mouseY < (listaCuadrados.get(i).getPosicionY() + (listaCuadrados.get(i).getTamaño() / 2))) {
+				if (mouseX > (listaCuadrados.get(i).getPosicionX() - (listaCuadrados.get(i).getTamano() / 2)) && 
+					mouseX < (listaCuadrados.get(i).getPosicionX() + (listaCuadrados.get(i).getTamano() / 2)) && 
+					mouseY > (listaCuadrados.get(i).getPosicionY() - (listaCuadrados.get(i).getTamano() / 2)) && 
+					mouseY < (listaCuadrados.get(i).getPosicionY() + (listaCuadrados.get(i).getTamano() / 2))) {
 					listaCuadrados.get(i).setmover(!listaCuadrados.get(i).estadoCuadrado());
 					}
 				}
 		}
 	}
-
-

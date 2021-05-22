@@ -4,17 +4,18 @@ public class Cuadrado {
 	
 		private int posicionX;
 		private int posicionY;
-		private int tamaño;
+		private int tamano;
 		private int llego;
 		
+		// Colores en rgb random 
 		private int r,g,b;
 		
 		private boolean estadoCuadrado;
 		
-		public Cuadrado(int posicionX, int posicionY, int tamaño, PApplet app) {
+		public Cuadrado(int posicionX, int posicionY, int tamano, PApplet app) {
 			this.posicionX = posicionX;
 			this.posicionY = posicionY;
-			this.tamaño = tamaño;
+			this.tamano = tamano;
 			
 			r = (int)(Math.random()*255);
 			g = (int)(Math.random()*200);
@@ -27,7 +28,7 @@ public class Cuadrado {
 		
 		public void pintar (PApplet app) {
 			app.fill(r,g,b);
-			app.rect(posicionX, posicionY, tamaño, tamaño);
+			app.rect(posicionX, posicionY, tamano, tamano);
 			mover();
 		}
 		
@@ -57,8 +58,8 @@ public class Cuadrado {
 			return posicionY;
 		}
 
-		public int getTamaño() {
-			return tamaño;
+		public int getTamano() {
+			return tamano;
 		}
 		
 		public void setmover(boolean estadoCuadrado) {
