@@ -6,8 +6,6 @@ public class Cuadrado {
 		private int posicionY;
 		private int tamano;
 		private int llego;
-		
-		// Colores en rgb random 
 		private int r,g,b;
 		
 		private boolean estadoCuadrado;
@@ -17,6 +15,7 @@ public class Cuadrado {
 			this.posicionY = posicionY;
 			this.tamano = tamano;
 			
+			// Colores en rgb random para los cuadrados
 			r = (int)(Math.random()*255);
 			g = (int)(Math.random()*200);
 			b = (int)(Math.random()*200);
@@ -27,6 +26,8 @@ public class Cuadrado {
 		}
 		
 		public void pintar (PApplet app) {
+			
+			// Colores en rgb random para los cuadrados
 			app.fill(r,g,b);
 			app.rect(posicionX, posicionY, tamano, tamano);
 			mover();
